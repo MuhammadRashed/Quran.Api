@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Quran.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Quran.Api.Controllers.AyaController">
+            <summary>
+            بيانات الاية
+            </summary>
+        </member>
+        <member name="M:Quran.Api.Controllers.AyaController.GetTopHundredBySearch(System.String)">
+            <summary>
+            البحث عن الايات
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.AyaController.GetById(System.Int32)">
+            <summary>
+            جلب بيانات الاية حسب المعرف الخاص بها
+            </summary>
+            <param name="AyaId">من واحد وحتى 6348</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.AyaController.GetBySurah(System.Int32)">
+            <summary>
+            ايات سورة
+            </summary>
+            <param name="SurahIndex">رقم السورة من 1 وحتى 144</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.AyaController.GetBySurah(System.Int32,System.Int32)">
+            <summary>
+            اية سورة
+            </summary>
+            <param name="AyaIndex">رقم الاية في السورة</param>
+            <param name="SurahIndex">رقم السورة</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.AyaController.GetByJuz(System.Int32)">
+            <summary>
+            ايات جزء
+            </summary>
+            <param name="JuzIndex">رقم الجزء من 1 وحتى 30</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.AyaController.GetByPage(System.Int32)">
+            <summary>
+            ايات صفحة
+            </summary>
+            <param name="PageIndex">رقم الصفحة من 1 وحتى 604</param>
+            <returns></returns>
+        </member>
+        <member name="T:Quran.Api.Controllers.SurahController">
+            <summary>
+            بيانات السورة
+            </summary>
+        </member>
+        <member name="M:Quran.Api.Controllers.SurahController.GetAll">
+            <summary>
+            جميع السور
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.SurahController.GetById(System.Int32)">
+            <summary>
+            بيانات سورة محددة
+            </summary>
+            <param name="SurahIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.SurahController.GetRelatedPages(System.Int32)">
+            <summary>
+            صفحات سورة محددة
+            </summary>
+            <param name="SurahIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.SurahController.GetRelatedJuz(System.Int32)">
+            <summary>
+            اجزاء سورة محددة
+            </summary>
+            <param name="SurahIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Quran.Api.Dtos.AyaOutputDto">
+            <summary>
+            بيانات الاية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.PreviousId">
+            <summary>
+            رقم معرف الاية السابقة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.NextId">
+            <summary>
+            رقم معرف الاية اللاحقة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.Id">
+            <summary>
+            رقم معرف الاية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.AyaIndex">
+            <summary>
+            رقم تسلسل الاية ضمن السورة, البسملة ترقم صفر, عدا في سورة البقرة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.SurahIndex">
+            <summary>
+            رقم تسلسل السورة من 1 وحتى 144
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.PageIndex">
+            <summary>
+            رقم تسلسل الصفحة من 1 وحتى 604
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.JuzIndex">
+            <summary>
+            رقم تسلسل الجزء من 1 وحتى 30
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.AyaOutputDto.Content">
+            <summary>
+            محتوى الآية
+            </summary>
+        </member>
+        <member name="T:Quran.Api.Dtos.JuzOutputDto">
+            <summary>
+            بيانات الجزء
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.JuzOutputDto.JuzIndex">
+            <summary>
+            رقم التسلسلي للجزء - رقم من 1 وحتى 30
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.JuzOutputDto.Surahs">
+            <summary>
+            الارقام التسلسلية الخاصة بالسور
+            </summary>
+        </member>
+        <member name="T:Quran.Api.Dtos.SurahOutputDto">
+            <summary>
+            بيانات السورة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.SurahOutputDto.SurahIndex">
+            <summary>
+            رقم تسلسل السورة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.SurahOutputDto.Title">
+            <summary>
+            اسم السورة باللغة الانجليزية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.SurahOutputDto.TitleAr">
+            <summary>
+            اسم السورة باللغة العربية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.SurahOutputDto.Pages">
+            <summary>
+            عدد صفحات السورة 
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.SurahOutputDto.Count">
+            <summary>
+            عدد ايات السورة
+            </summary>
+        </member>
+    </members>
+</doc>
