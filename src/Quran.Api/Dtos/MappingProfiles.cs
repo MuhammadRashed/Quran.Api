@@ -11,23 +11,23 @@ namespace Quran.Api.Dtos
     {
         public MappingProfiles()
         {
-            CreateMap<Aya, AyaOutputDto>()
+            CreateMap<Verse, VerseOutputDto>()
                 .ForMember(
-                mem => mem.SurahIndex,
-                opt => opt.MapFrom(t => t.SurahId)
+                mem => mem.ChapterIndex,
+                opt => opt.MapFrom(t => t.ChapterId)
                 )
                 .ForMember(
                 mem => mem.PageIndex,
                 opt => opt.MapFrom(t => t.PageId)
                 )
                 .ForMember(
-                mem => mem.JuzIndex,
-                opt => opt.MapFrom(t => t.JuzId)
+                mem => mem.PartIndex,
+                opt => opt.MapFrom(t => t.PartId)
                 )
                 ;
 
-            CreateMap<Surah, SurahOutputDto>();
-            CreateMap<Juz, JuzOutputDto>();
+            CreateMap<Chapter, ChapterOutputDto>();
+            CreateMap<Part, PartOutputDto>();
 
             
 

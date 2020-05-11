@@ -7,6 +7,6 @@ namespace Quran.Data.SerilizationDtos
     class PageSerilizationDto
     {
         public int Page { get; set; }
-        public AyaSerilizationDto[] Ayats { get; set; }
+        public VerseSerilizationDto[] Verses { get; set; }
     }
 }

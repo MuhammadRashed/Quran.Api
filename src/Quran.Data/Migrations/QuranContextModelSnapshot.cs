@@ -19,52 +19,52 @@ namespace Quran.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Quran.Core.Aya", b =>
+            modelBuilder.Entity("Quran.Core.Verse", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AyaIndex")
+                    b.Property<int>("VerseIndex")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("JuzId")
+                    b.Property<int?>("PartId")
                         .HasColumnType("int");
 
                     b.Property<int?>("PageId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SurahId")
+                    b.Property<int>("ChapterId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JuzId");
+                    b.HasIndex("PartId");
 
                     b.HasIndex("PageId");
 
-                    b.HasIndex("SurahId");
+                    b.HasIndex("ChapterId");
 
-                    b.ToTable("Ayas");
+                    b.ToTable("Verses");
                 });
 
-            modelBuilder.Entity("Quran.Core.Juz", b =>
+            modelBuilder.Entity("Quran.Core.Part", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("JuzIndex")
+                    b.Property<int>("PartIndex")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Juzs");
+                    b.ToTable("Parts");
                 });
 
             modelBuilder.Entity("Quran.Core.Page", b =>
@@ -74,7 +74,7 @@ namespace Quran.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("JuzId")
+                    b.Property<int>("PartId")
                         .HasColumnType("int");
 
                     b.Property<int>("PageIndex")
@@ -82,12 +82,12 @@ namespace Quran.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JuzId");
+                    b.HasIndex("PartId");
 
                     b.ToTable("Pages");
                 });
 
-            modelBuilder.Entity("Quran.Core.Surah", b =>
+            modelBuilder.Entity("Quran.Core.Chapter", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -100,7 +100,7 @@ namespace Quran.Data.Migrations
                     b.Property<int>("Pages")
                         .HasColumnType("int");
 
-                    b.Property<int>("SurahIndex")
+                    b.Property<int>("ChapterIndex")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -114,31 +114,31 @@ namespace Quran.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Surahs");
+                    b.ToTable("Chapters");
                 });
 
-            modelBuilder.Entity("Quran.Core.Aya", b =>
+            modelBuilder.Entity("Quran.Core.Verse", b =>
                 {
-                    b.HasOne("Quran.Core.Juz", "Juz")
+                    b.HasOne("Quran.Core.Part", "Part")
                         .WithMany()
-                        .HasForeignKey("JuzId");
+                        .HasForeignKey("PartId");
 
                     b.HasOne("Quran.Core.Page", "Page")
-                        .WithMany("Aya")
+                        .WithMany("Verse")
                         .HasForeignKey("PageId");
 
-                    b.HasOne("Quran.Core.Surah", "Surah")
+                    b.HasOne("Quran.Core.Chapter", "Chapter")
                         .WithMany()
-                        .HasForeignKey("SurahId")
+                        .HasForeignKey("ChapterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Quran.Core.Page", b =>
                 {
-                    b.HasOne("Quran.Core.Juz", "Juz")
+                    b.HasOne("Quran.Core.Part", "Part")
                         .WithMany()
-                        .HasForeignKey("JuzId")
+                        .HasForeignKey("PartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

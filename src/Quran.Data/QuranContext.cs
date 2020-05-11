@@ -16,10 +16,10 @@ namespace Quran.Data
     : base(options)
         { }
 
-        public DbSet<Aya> Ayas { get; set; }
+        public DbSet<Verse> Verses { get; set; }
         public DbSet<Page> Pages { get; set; }
-        public DbSet<Surah> Surahs { get; set; }
-        public DbSet<Juz> Juzs { get; set; }
+        public DbSet<Chapter> Chapters { get; set; }
+        public DbSet<Part> Parts { get; set; }
         
     }
 }

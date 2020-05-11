@@ -6,6 +6,6 @@ namespace Quran.Core
 {
     public class Const
     {
-        public const int AyaCount = 6348;
+        public const int VerseCount = 6348;
     }
 }

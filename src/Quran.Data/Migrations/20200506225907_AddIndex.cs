@@ -13,8 +13,8 @@ namespace Quran.Data.Migrations
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<int>(
-                name: "JuzIndex",
-                table: "Juzs",
+                name: "PartIndex",
+                table: "Parts",
                 nullable: false,
                 defaultValue: 0);
         }
@@ -26,8 +26,8 @@ namespace Quran.Data.Migrations
                 table: "Pages");
 
             migrationBuilder.DropColumn(
-                name: "JuzIndex",
-                table: "Juzs");
+                name: "PartIndex",
+                table: "Parts");
         }
     }
 }

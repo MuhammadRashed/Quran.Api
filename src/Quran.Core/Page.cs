@@ -8,11 +8,11 @@ namespace Quran.Core
     {
         public int Id { get; set; }
         public int PageIndex { get; set; }
-        public int JuzId { get; set; }
+        public int PartId { get; set; }
 
-        [ForeignKey("JuzId")]
-        public Juz Juz { get; set; }
+        [ForeignKey("PartId")]
+        public Part Part { get; set; }
 
-        public ICollection<Aya> Aya { get; set; }
+        public ICollection<Verse> Verse { get; set; }
     }
 }
