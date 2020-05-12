@@ -3,6 +3,7 @@ Quran API Built on ASP.NET Core Web API
 
 
 ## Installation
+0- Change `DocumentationFile` in `src\Quran.Api\Quran.Api.csproj` to a local path
 
 1- Build project and restore packages
 
