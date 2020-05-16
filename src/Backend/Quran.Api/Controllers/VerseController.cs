@@ -35,8 +35,7 @@ namespace Quran.Api.Controllers
         public async Task<ActionResult<VerseOutputDto[]>> GetTopHundredBySearch(string search)
         {
             search = TextOperations.SkipChars(search);
-            var parsed = mapper.Map<VerseOutputDto[]>(await quranContext.Verses.ToListAsync())
-                .Where(t => TextOperations.SkipChars(t.Content).Contains(search)).Take(100).ToArray();
+            var parsed = mapper.Map<VerseOutputDto[]>(await quranContext.Verses.Where(t => t.CleanContent.Contains(search)).Take(100).ToArrayAsync());
             return parsed;
         }
 

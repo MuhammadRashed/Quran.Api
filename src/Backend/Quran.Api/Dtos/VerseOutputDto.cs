@@ -70,8 +70,15 @@ namespace Quran.Api.Dtos
         public int PartIndex { get; set; }
 
         /// <summary>
-        /// محتوى الآية
+        /// محتوى الآية مع تشكيل
         /// </summary>
         public string Content { get; set; }
+
+
+        /// <summary>
+        /// محتوى الآية بدون تشكيل
+        /// </summary>
+        public string CleanContent { get; set; }
+
     }
 }

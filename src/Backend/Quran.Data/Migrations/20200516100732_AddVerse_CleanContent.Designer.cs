@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Quran.Data;
 
 namespace Quran.Data.Migrations
 {
     [DbContext(typeof(QuranContext))]
-    partial class QuranContextModelSnapshot : ModelSnapshot
+    [Migration("20200516100732_AddVerse_CleanContent")]
+    partial class AddVerse_CleanContent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

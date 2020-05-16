@@ -13,6 +13,7 @@ namespace Quran.Core
         public int VerseIndex { get; set; }
 
         public string Content { get; set; }
+        public string CleanContent { get; set; }
 
 
         public int ChapterId { get; set; }
