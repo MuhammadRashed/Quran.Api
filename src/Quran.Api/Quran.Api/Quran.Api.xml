@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Quran.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Quran.Api.Controllers.ChapterController">
+            <summary>
+            بيانات السورة
+            </summary>
+        </member>
+        <member name="M:Quran.Api.Controllers.ChapterController.GetAll">
+            <summary>
+            جميع السور
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.ChapterController.GetById(System.Int32)">
+            <summary>
+            بيانات سورة محددة
+            </summary>
+            <param name="ChapterIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.ChapterController.GetRelatedPages(System.Int32)">
+            <summary>
+            صفحات سورة محددة
+            </summary>
+            <param name="ChapterIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.ChapterController.GetRelatedPart(System.Int32)">
+            <summary>
+            اجزاء سورة محددة
+            </summary>
+            <param name="ChapterIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Quran.Api.Controllers.VerseController">
+            <summary>
+            بيانات الاية
+            </summary>
+        </member>
+        <member name="M:Quran.Api.Controllers.VerseController.GetTopHundredBySearch(System.String)">
+            <summary>
+            البحث عن الايات
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.VerseController.GetById(System.Int32)">
+            <summary>
+            جلب بيانات الاية حسب المعرف الخاص بها
+            </summary>
+            <param name="VerseId">من واحد وحتى 6348</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.VerseController.GetByChapter(System.Int32)">
+            <summary>
+            ايات سورة
+            </summary>
+            <param name="ChapterIndex">رقم السورة من 1 وحتى 144</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.VerseController.GetByChapter(System.Int32,System.Int32)">
+            <summary>
+            اية سورة
+            </summary>
+            <param name="VerseIndex">رقم الاية في السورة</param>
+            <param name="ChapterIndex">رقم السورة</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.VerseController.GetByPart(System.Int32)">
+            <summary>
+            ايات جزء
+            </summary>
+            <param name="PartIndex">رقم الجزء من 1 وحتى 30</param>
+            <returns></returns>
+        </member>
+        <member name="M:Quran.Api.Controllers.VerseController.GetByPage(System.Int32)">
+            <summary>
+            ايات صفحة
+            </summary>
+            <param name="PageIndex">رقم الصفحة من 1 وحتى 604</param>
+            <returns></returns>
+        </member>
+        <member name="T:Quran.Api.Dtos.ChapterOutputDto">
+            <summary>
+            بيانات السورة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.ChapterOutputDto.ChapterIndex">
+            <summary>
+            رقم تسلسل السورة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.ChapterOutputDto.Title">
+            <summary>
+            اسم السورة باللغة الانجليزية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.ChapterOutputDto.TitleAr">
+            <summary>
+            اسم السورة باللغة العربية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.ChapterOutputDto.Pages">
+            <summary>
+            عدد صفحات السورة 
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.ChapterOutputDto.Count">
+            <summary>
+            عدد ايات السورة
+            </summary>
+        </member>
+        <member name="T:Quran.Api.Dtos.PartOutputDto">
+            <summary>
+            بيانات الجزء
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.PartOutputDto.PartIndex">
+            <summary>
+            رقم التسلسلي للجزء - رقم من 1 وحتى 30
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.PartOutputDto.Chapters">
+            <summary>
+            الارقام التسلسلية الخاصة بالسور
+            </summary>
+        </member>
+        <member name="T:Quran.Api.Dtos.VerseOutputDto">
+            <summary>
+            بيانات الاية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.PreviousId">
+            <summary>
+            رقم معرف الاية السابقة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.NextId">
+            <summary>
+            رقم معرف الاية اللاحقة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.Id">
+            <summary>
+            رقم معرف الاية
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.VerseIndex">
+            <summary>
+            رقم تسلسل الاية ضمن السورة, البسملة ترقم صفر, عدا في سورة البقرة
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.ChapterIndex">
+            <summary>
+            رقم تسلسل السورة من 1 وحتى 144
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.PageIndex">
+            <summary>
+            رقم تسلسل الصفحة من 1 وحتى 604
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.PartIndex">
+            <summary>
+            رقم تسلسل الجزء من 1 وحتى 30
+            </summary>
+        </member>
+        <member name="P:Quran.Api.Dtos.VerseOutputDto.Content">
+            <summary>
+            محتوى الآية
+            </summary>
+        </member>
+    </members>
+</doc>
